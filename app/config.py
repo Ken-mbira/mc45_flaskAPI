@@ -4,7 +4,7 @@ import os
 class Development:
     DEBUG = True
     TESTING = False
-    DATABASE_URI='postgresql+psycopg2://postgres:new_password@localhost/mc45'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://kenmbira:1234@localhost/mc45'
 
 
 app_config = {

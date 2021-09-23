@@ -9,11 +9,16 @@ class Bball_Db:
     """
 
     @classmethod
-    def init_db(cls, uri):
+    def init_db(cls, db_name,db_host,db_password,db_user):
         """
         Method to initialize the database
         """
-        cls.conn =  psycopg2.connect(uri)
+        cls.conn =  psycopg2.connect(
+            host = db_host,
+            password = db_password,
+            database=db_name,
+            user=db_user
+        )
         cls.cur = cls.conn.cursor(cursor_factory=RealDictCursor)
         print("Database = ", cls.conn.get_dsn_parameters())
 

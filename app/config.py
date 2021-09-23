@@ -4,7 +4,10 @@ import os
 class Development:
     DEBUG = True
     TESTING = False
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://kenmbira:1234@localhost/mc45'
+    DB_NAME=os.environ.get('DB_NAME')
+    DB_HOST =os.environ.get('DB_HOST')
+    DB_PASSWORD=os.environ.get('DB_PASSWORD')
+    DB_USER=os.environ.get('DB_USER')
 
 
 app_config = {
